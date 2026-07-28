@@ -12,3 +12,7 @@ app = FastAPI(
 Base.metadata.create_all(bind=engine)
 
 app.include_router(tasks.router)
+
+@app.get("/health", tags=["Health"])
+def health_check():
+    return {"status": "ok"}
