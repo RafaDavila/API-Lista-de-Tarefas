@@ -113,3 +113,70 @@ def test_delete_task(client):
     get_response = client.get(f"/tasks/{task_id}")
 
     assert get_response.status_code == 404
+
+def test_get_nonexistent_task(client):
+        response = client.get("/tasks/999")
+
+        assert response.status_code == 404
+        assert response.json() == {"detail": "Tarefa não encontrada"}
+
+def test_update_nonexistent_task(client):
+    updated_data = {
+        "titulo": "Tarefa inexistente",
+        "descricao": "Tentativa de atualização",
+        "concluida": True
+    }
+
+    response = client.put(
+        "/tasks/999",
+        json=updated_data
+    )
+
+    assert response.status_code == 404
+    assert response.json() == {"detail": "Tarefa não encontrada"}
+
+def test_delete_nonexistent_task(client):
+    response = client.delete("/tasks/999")
+
+    assert response.status_code == 404
+    assert response.json() == {"detail": "Tarefa não encontrada"}
+
+
+def test_create_task_with_short_title(client):
+    task_data = {
+        "titulo": "Oi",
+        "descricao": "Título com menos de três caracteres"
+    }
+
+    response = client.post("/tasks/", json=task_data)
+
+    assert response.status_code == 422
+
+def test_create_task_without_title(client):
+    task_data = {
+        "descricao": "Tarefa sem título"
+    }
+
+    response = client.post("/tasks/", json=task_data)
+
+    assert response.status_code == 422
+
+def test_create_task_with_long_title(client):
+    task_data = {
+        "titulo": "A" * 101,
+        "descricao": "Título acima do limite permitido"
+    }
+
+    response = client.post("/tasks/", json=task_data)
+
+    assert response.status_code == 422
+
+def test_create_task_with_long_description(client):
+    task_data = {
+        "titulo": "Descrição longa",
+        "descricao": "A" * 501
+    }
+
+    response = client.post("/tasks/", json=task_data)
+
+    assert response.status_code == 422
