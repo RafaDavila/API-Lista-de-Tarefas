@@ -181,10 +181,14 @@ O Docker Compose também cria:
 
 ## Iniciar a aplicação
 
-Na raiz do projeto, execute: ``` docker compose up --build ```
-Para executar em segundo plano: ``` docker compose up --build -d ```
-Depois, acesse: http://localhost:8000/docs
-A rota de verificação está disponível em: http://localhost:8000/health
+Na raiz do projeto, execute:
+ ``` docker compose up --build ```
+Para executar em segundo plano:
+ ``` docker compose up --build -d ```
+Depois, acesse: 
+ http://localhost:8000/docs
+A rota de verificação está disponível em:
+ http://localhost:8000/health
 
 ### Verificar os containers
 ```
