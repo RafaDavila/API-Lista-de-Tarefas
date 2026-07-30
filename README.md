@@ -20,7 +20,7 @@ O projeto faz parte do meu portfólio e foi criado com o objetivo de praticar de
 - Docker Compose
 - Git e GitHub
 
-
+---
 
 ## 📂 Estrutura do projeto
 
@@ -50,21 +50,22 @@ todo-api/
 ├── Dockerfile
 ├── README.md
 └── requirements.txt
-```
 
+```
+ 
 ## 📌 Funcionalidades
 
 A API permite:
 
-Criar uma tarefa
-Listar todas as tarefas
-Buscar uma tarefa pelo ID
-Atualizar uma tarefa
-Excluir uma tarefa
-Marcar uma tarefa como concluída
-Validar os dados enviados
-Retornar erros para tarefas inexistentes
-Verificar a saúde da aplicação
+- Criar uma tarefa
+- Listar todas as tarefas
+- Buscar uma tarefa pelo ID
+- Atualizar uma tarefa
+- Excluir uma tarefa
+- Marcar uma tarefa como concluída
+- Validar os dados enviados
+- Retornar erros para tarefas inexistentes
+- Verificar a saúde da aplicação
 
 
 ## 🔗 Endpoints
@@ -101,13 +102,13 @@ A criação retorna o código HTTP: 201 created
 
 Os dados recebidos pela API são validados com Pydantic.
 
-Título
-Obrigatório
-Mínimo de 3 caracteres
-Máximo de 100 caracteres
-Descrição
-Opcional
-Máximo de 500 caracteres
+- Título
+- Obrigatório
+- Mínimo de 3 caracteres
+- Máximo de 100 caracteres
+- Descrição
+- Opcional
+- Máximo de 500 caracteres
 
 Quando os dados enviados são inválidos, a API retorna: 422 Unprocessable Entity
 
@@ -129,10 +130,10 @@ DATABASE_URL=postgresql+psycopg://usuario:senha@localhost:5432/todo_db
 
 O SQLAlchemy é responsável por:
 
-Criar a conexão com o banco
-Gerenciar as sessões
-Mapear a tabela tasks
-Executar as operações de criação, consulta, atualização e exclusão
+- Criar a conexão com o banco
+- Gerenciar as sessões
+- Mapear a tabela tasks
+- Executar as operações de criação, consulta, atualização e exclusão
 
 ## 🧪 Testes automatizados
 
@@ -142,19 +143,19 @@ Os testes utilizam um banco SQLite em memória, separado do PostgreSQL principal
 
 Atualmente, o projeto possui 13 testes cobrindo:
 
-Health check
-Criação de tarefas
-Listagem de tarefas
-Busca de tarefa pelo ID
-Atualização de tarefas
-Exclusão de tarefas
-Busca de tarefa inexistente
-Atualização de tarefa inexistente
-Exclusão de tarefa inexistente
-Título com menos de 3 caracteres
-Requisição sem título
-Título com mais de 100 caracteres
-Descrição com mais de 500 caracteres
+- Health check
+- Criação de tarefas
+- Listagem de tarefas
+- Busca de tarefa pelo ID
+- Atualização de tarefas
+- Exclusão de tarefas
+- Busca de tarefa inexistente
+- Atualização de tarefa inexistente
+- Exclusão de tarefa inexistente
+- Título com menos de 3 caracteres
+- Requisição sem título
+- Título com mais de 100 caracteres
+- Descrição com mais de 500 caracteres
 
 Para executar os testes:
 
@@ -167,16 +168,16 @@ Resultado esperado: 13 passed
 O projeto utiliza Docker Compose para executar a API e o PostgreSQL em containers separados.
 
 ### Serviços
- todo_api
+ - todo_api
  Container responsável pela aplicação FastAPI.
- todo_db
+ - todo_db
  Container responsável pelo PostgreSQL.
 
 O Docker Compose também cria:
 
-Uma rede interna entre a API e o banco
-Um volume para persistência dos dados
-Um healthcheck para verificar se o PostgreSQL está pronto
+- Uma rede interna entre a API e o banco
+- Um volume para persistência dos dados
+- Um healthcheck para verificar se o PostgreSQL está pronto
 
 ## Iniciar a aplicação
 
@@ -209,25 +210,25 @@ Depois execute em: uvicorn app.main:app --reload
 A documentação estará disponível em: http://127.0.0.1:8000/docs
 
 ## Etapas concluídas
- -Estrutura inicial do projeto
- -Configuração do FastAPI
- -CRUD completo
- -Organização das rotas com APIRouter
- -Validações com Pydantic
- -Tratamento de erros
- -Migração de SQLite para PostgreSQL
- -Variáveis de ambiente
- -Testes automatizados
- -Dockerfile
- -Docker Compose
- -PostgreSQL em container
- -Persistência com volume
- -Healthcheck do banco
+ - Estrutura inicial do projeto
+ - Configuração do FastAPI
+ - CRUD completo
+ - Organização das rotas com APIRouter
+ - Validações com Pydantic
+ - Tratamento de erros
+ - Migração de SQLite para PostgreSQL
+ - Variáveis de ambiente
+ - Testes automatizados
+ - Dockerfile
+ - Docker Compose
+ - PostgreSQL em container
+ - Persistência com volume
+ - Healthcheck do banco
 
  ## Próximas etapas
- -Migrações de banco com Alembic
- -Deploy da aplicação
- -Interface front-end
+ - Migrações de banco com Alembic
+ - Deploy da aplicação
+ - Interface front-end
 
  ## Objetivo
  Construir uma API REST completa utilizando boas práticas de desenvolvimento back-end.
