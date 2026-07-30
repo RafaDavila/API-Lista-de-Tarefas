@@ -52,7 +52,7 @@ todo-api/
 └── requirements.txt
 ```
 
-##📌 Funcionalidades
+## 📌 Funcionalidades
 
 A API permite:
 
@@ -67,7 +67,7 @@ Retornar erros para tarefas inexistentes
 Verificar a saúde da aplicação
 
 
-##🔗 Endpoints
+## 🔗 Endpoints
 
 | Método   | Endpoint           | Descrição                          |
 | -------- | ------------------ | ---------------------------------- |
@@ -79,7 +79,7 @@ Verificar a saúde da aplicação
 | `GET`    | `/health`          | Verifica se a API está funcionando |
 
 
-##📝 Exemplo de criação de tarefa
+## 📝 Exemplo de criação de tarefa
 
 {
   "titulo": "Estudar FastAPI",
@@ -97,7 +97,7 @@ Resposta
 
 A criação retorna o código HTTP: 201 created
 
-##✅ Validações
+## ✅ Validações
 
 Os dados recebidos pela API são validados com Pydantic.
 
@@ -134,7 +134,7 @@ Gerenciar as sessões
 Mapear a tabela tasks
 Executar as operações de criação, consulta, atualização e exclusão
 
-##🧪 Testes automatizados
+## 🧪 Testes automatizados
 
 O projeto possui testes automatizados desenvolvidos com Pytest e o TestClient do FastAPI.
 
