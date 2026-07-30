@@ -81,22 +81,22 @@ A API permite:
 
 
 ## 📝 Exemplo de criação de tarefa
-
+```
 {
   "titulo": "Estudar FastAPI",
   "descricao": "Continuar o desenvolvimento da API"
 }
-
+```
 Resposta
-
+```
 {
   "id": 1,
   "titulo": "Estudar FastAPI",
   "descricao": "Continuar o desenvolvimento da API",
   "concluida": false
 }
-
-A criação retorna o código HTTP: 201 created
+```
+A criação retorna o código HTTP: ``` 201 created ```
 
 ## ✅ Validações
 
@@ -110,24 +110,24 @@ Os dados recebidos pela API são validados com Pydantic.
 - Opcional
 - Máximo de 500 caracteres
 
-Quando os dados enviados são inválidos, a API retorna: 422 Unprocessable Entity
+Quando os dados enviados são inválidos, a API retorna: ``` 422 Unprocessable Entity ```
 
-Quando uma tarefa não é encontrada, a API retorna: 404 Not Found
+Quando uma tarefa não é encontrada, a API retorna: ``` 404 Not Found ```
 
 Exemplo:
-
+```
 {
   "detail": "Tarefa não encontrada"
 }
-
+```
 Banco de dados
 
 A aplicação utiliza PostgreSQL para persistência dos dados.
 
 A conexão é configurada por meio da variável de ambiente:
-
+```
 DATABASE_URL=postgresql+psycopg://usuario:senha@localhost:5432/todo_db
-
+```
 O SQLAlchemy é responsável por:
 
 - Criar a conexão com o banco
@@ -158,9 +158,9 @@ Atualmente, o projeto possui 13 testes cobrindo:
 - Descrição com mais de 500 caracteres
 
 Para executar os testes:
-
+```
 python -m pytest -v
-
+```
 Resultado esperado: 13 passed
 
 ## 🐳 Executando com Docker
@@ -181,31 +181,32 @@ O Docker Compose também cria:
 
 ## Iniciar a aplicação
 
-Na raiz do projeto, execute: docker compose up --build
-Para executar em segundo plano: docker compose up --build -d
+Na raiz do projeto, execute: ``` docker compose up --build ```
+Para executar em segundo plano: ``` docker compose up --build -d ```
 Depois, acesse: http://localhost:8000/docs
 A rota de verificação está disponível em: http://localhost:8000/health
 
 ### Verificar os containers
-
+```
 docker compose ps
-
+```
 ### Parar os containers
-
+```
 docker compose down -v
-
+```
 ## Executando sem Docker
 
 Crie e ative um ambiente virtual:
 
 ### Windows 
+```
 python -m venv venv
 venv\Scripts\Activate.ps1
-
-Instale as dependências: pip install -r requirements.txt
+```
+Instale as dependências: ``` pip install -r requirements.txt ```
 
 Configure a variável DATABASE_URL em um arquivo .env.
-Depois execute em: uvicorn app.main:app --reload
+Depois execute em: ``` uvicorn app.main:app --reload ```
 
 A documentação estará disponível em: http://127.0.0.1:8000/docs
 
