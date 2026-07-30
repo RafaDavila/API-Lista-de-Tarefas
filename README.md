@@ -20,7 +20,7 @@ O projeto faz parte do meu portfólio e foi criado com o objetivo de praticar de
 - Docker Compose
 - Git e GitHub
 
----
+
 
 ## 📂 Estrutura do projeto
 
@@ -50,7 +50,7 @@ todo-api/
 ├── Dockerfile
 ├── README.md
 └── requirements.txt
----
+```
 
 ##📌 Funcionalidades
 
