@@ -50,6 +50,7 @@ todo-api/
 ├── Dockerfile
 ├── README.md
 └── requirements.txt
+---
 
 ##📌 Funcionalidades
 
