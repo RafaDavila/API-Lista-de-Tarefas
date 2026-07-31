@@ -180,3 +180,13 @@ def test_create_task_with_long_description(client):
     response = client.post("/tasks/", json=task_data)
 
     assert response.status_code == 422
+
+def test_root(client):
+    response = client.get("/")
+
+    assert response.status_code == 200
+    assert response.json() == {
+        "message": "Bem-vindo à ToDo API",
+        "documentation": "/docs",
+        "health": "/health"
+    }

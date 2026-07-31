@@ -6,6 +6,14 @@ O projeto faz parte do meu portfólio e foi criado com o objetivo de praticar de
 
 ---
 
+## 🌐 API publicada
+
+A aplicação está disponível publicamente no Render:
+
+- Documentação Swagger: https://api-lista-de-tarefas-zjn5.onrender.com/docs
+- Health check: https://api-lista-de-tarefas-zjn5.onrender.com/health
+- Rota inicial: https://api-lista-de-tarefas-zjn5.onrender.com/
+
 ## 🚀 Tecnologias utilizadas
 
 - Python 3.14
@@ -82,6 +90,7 @@ A API permite:
 | `PUT`    | `/tasks/{task_id}` | Atualiza uma tarefa                |
 | `DELETE` | `/tasks/{task_id}` | Exclui uma tarefa                  |
 | `GET`    | `/health`          | Verifica se a API está funcionando |
+| `GET`    | `/`                | Exibe informações básicas da API   |
 
 
 ## 📝 Exemplo de criação de tarefa
@@ -187,7 +196,7 @@ Para executar os testes:
 ```
 python -m pytest -v
 ```
-Resultado esperado: 13 passed
+Resultado esperado: 14 passed 1 warning
 
 ## 🐳 Executando com Docker
 
