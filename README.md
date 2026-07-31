@@ -5,6 +5,8 @@ API REST para gerenciamento de tarefas desenvolvida com **Python**, **FastAPI**,
 O projeto faz parte do meu portfólio e foi criado com o objetivo de praticar desenvolvimento back-end, organização de código, persistência de dados, testes automatizados e conteinerização com Docker.
 
 ---
+Front-end deste projeto:
+https://github.com/RafaDavila/API-Lista-de-Tarefas-FrontEnd
 
 ## 🌐 API publicada
 
