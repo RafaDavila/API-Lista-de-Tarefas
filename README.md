@@ -19,6 +19,7 @@ O projeto faz parte do meu portfólio e foi criado com o objetivo de praticar de
 - Docker
 - Docker Compose
 - Git e GitHub
+- Alembic
 
 ---
 
@@ -45,6 +46,9 @@ todo-api/
 │
 ├── .dockerignore
 ├── .env
+|── .env.example
+|── alembic/
+|── alembic.ini
 ├── .gitignore
 ├── docker-compose.yml
 ├── Dockerfile
@@ -93,10 +97,32 @@ Resposta
   "id": 1,
   "titulo": "Estudar FastAPI",
   "descricao": "Continuar o desenvolvimento da API",
-  "concluida": false
+  "concluida": false,
+  "data_criacao": "2026-07-31T20:41:53.340247Z"
 }
+
 ```
 A criação retorna o código HTTP: ``` 201 created ```
+
+## 🔄 Migrações com Alembic
+
+O projeto utiliza Alembic para versionar alterações na estrutura do banco de dados.
+
+As migrações permitem:
+
+- adicionar ou remover colunas;
+- criar ou alterar tabelas;
+- manter diferentes ambientes com a mesma estrutura;
+- aplicar mudanças sem recriar o banco manualmente.
+
+Para aplicar todas as migrações pendentes:
+
+```bash
+alembic upgrade head
+
+```
+
+```
 
 ## ✅ Validações
 
@@ -196,7 +222,7 @@ docker compose ps
 ```
 ### Parar os containers
 ```
-docker compose down -v
+docker compose down 
 ```
 ## Executando sem Docker
 
@@ -229,9 +255,12 @@ A documentação estará disponível em: http://127.0.0.1:8000/docs
  - PostgreSQL em container
  - Persistência com volume
  - Healthcheck do banco
+ - Migrações com Alembic
+ - Coluna de data de criação
+ - Aplicação automática das migrações no Docker
 
  ## Próximas etapas
- - Migrações de banco com Alembic
+
  - Deploy da aplicação
  - Interface front-end
 
