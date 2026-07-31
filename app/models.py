@@ -1,4 +1,4 @@
-from sqlalchemy import Boolean, Column, Integer, String
+from sqlalchemy import Boolean, Column, Integer, String, func, DateTime
 
 from app.database import Base
 
@@ -10,3 +10,8 @@ class Task(Base):
     titulo = Column(String, nullable=False)
     descricao = Column(String)
     concluida = Column(Boolean, default=False)
+    data_criacao = Column(
+        DateTime(timezone=True),
+        server_default=func.now(),
+        nullable=False
+    )

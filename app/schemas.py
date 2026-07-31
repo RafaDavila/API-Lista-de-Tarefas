@@ -1,4 +1,5 @@
 from pydantic import BaseModel, ConfigDict, Field
+from datetime import datetime
 
 class TaskBase(BaseModel):
     titulo: str = Field(..., min_length=3, max_length=100, description="Título da tarefa")
@@ -14,9 +15,10 @@ class TaskCreate(TaskBase):
 
 class TaskUpdate(TaskBase):
     concluida: bool | None = None
-
+    
 class TaskResponse(TaskBase):
     id: int
     concluida: bool
+    data_criacao: datetime
 
     model_config = ConfigDict(from_attributes=True)
