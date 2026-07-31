@@ -16,3 +16,11 @@ app.include_router(tasks.router)
 @app.get("/health", tags=["Health"])
 def health_check():
     return {"status": "ok"}
+
+@app.get("/", tags=["Root"])
+def root():
+    return {
+        "message": "Bem-vindo à ToDo API",
+        "documentation": "/docs",
+        "health": "/health"
+    }
