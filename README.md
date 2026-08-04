@@ -12,6 +12,8 @@ https://github.com/RafaDavila/API-Lista-de-Tarefas-FrontEnd
 
 A aplicação está disponível publicamente no Render:
 
+- Front-end publicado: https://todo-app-frontend-e35w.onrender.com
+
 - Documentação Swagger: https://api-lista-de-tarefas-zjn5.onrender.com/docs
 - Health check: https://api-lista-de-tarefas-zjn5.onrender.com/health
 - Rota inicial: https://api-lista-de-tarefas-zjn5.onrender.com/
@@ -30,6 +32,8 @@ A aplicação está disponível publicamente no Render:
 - Docker Compose
 - Git e GitHub
 - Alembic
+- Render
+- CORS Middleware
 
 ---
 
@@ -71,15 +75,15 @@ todo-api/
 
 A API permite:
 
-- Criar uma tarefa
-- Listar todas as tarefas
-- Buscar uma tarefa pelo ID
-- Atualizar uma tarefa
-- Excluir uma tarefa
-- Marcar uma tarefa como concluída
-- Validar os dados enviados
-- Retornar erros para tarefas inexistentes
-- Verificar a saúde da aplicação
+- Criação de tarefas
+- Listagem de tarefas
+- Busca de tarefa por ID
+- Atualização de tarefas
+- Exclusão de tarefas
+- Registro da data de criação
+- Validação de dados com Pydantic
+- Tratamento de erros 404
+- Integração com front-end React por CORS
 
 
 ## 🔗 Endpoints
@@ -251,6 +255,18 @@ Depois execute em: ``` uvicorn app.main:app --reload ```
 
 A documentação estará disponível em: http://127.0.0.1:8000/docs
 
+## CORS
+
+A API permite requisições dos ambientes utilizados pelo front-end:
+
+```text
+http://localhost:5173
+http://localhost:4173
+https://todo-app-frontend-e35w.onrender.com
+```
+
+
+
 ## Etapas concluídas
  - Estrutura inicial do projeto
  - Configuração do FastAPI
@@ -271,11 +287,23 @@ A documentação estará disponível em: http://127.0.0.1:8000/docs
  - Aplicação automática das migrações no Docker
 
  ## Próximas etapas
+- Autenticação de usuários com JWT
+- Tarefas individuais por usuário
+- Edição de título e descrição
+- Filtros por tarefas pendentes e concluídas
+- Testes automatizados do front-end
+- Paginação da lista
+- Melhorias de acessibilidade
 
- - Deploy da aplicação
- - Interface front-end
+ ## Observação 
+ Atualmente, a aplicação utiliza uma lista pública e compartilhada.
 
- ## Objetivo
- Construir uma API REST completa utilizando boas práticas de desenvolvimento back-end.
+Como ainda não existe autenticação, todos os visitantes acessam as mesmas tarefas e podem criar, atualizar ou excluir itens.
 
-O projeto está sendo desenvolvido de forma incremental, registrando cada etapa do aprendizado, desde a criação do CRUD até a configuração de banco de dados, testes automatizados, Docker e futura publicação da aplicação.
+Uma futura evolução do projeto será adicionar autenticação com JWT e associar cada tarefa ao seu respectivo usuário.
+
+## Autor
+
+Desenvolvido por Rafael Davila.
+
+GitHub: https://github.com/RafaDavila
